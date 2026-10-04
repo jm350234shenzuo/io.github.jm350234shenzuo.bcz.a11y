@@ -1,35 +1,83 @@
+<div align="center">
+
+<img src="icon.png" width="128" alt="题神·百词斩">
+
 # 题神·百词斩
 
-针对 **百词斩**（`com.jiongji.andriod.card`）的 LSPosed 增强模块。
+**百词斩 增强模块 · LSPosed / Vector**
 
-- 模块包名（applicationId）：`io.github.jm350234shenzuo.bcz.a11y`
-- 目标应用：`com.jiongji.andriod.card`
-- 版本：1.0（versionCode 1）
+![version](https://img.shields.io/badge/version-1.0-blue)
+![framework](https://img.shields.io/badge/framework-LSPosed%20%7C%20Vector-9cf)
+![android](https://img.shields.io/badge/Android-7.0%2B%20(minSdk%2023)-green)
+![purpose](https://img.shields.io/badge/用途-学习研究-orange)
+
+包名 `io.github.jm350234shenzuo.bcz.a11y` · 作用域 `com.jiongji.andriod.card`
+
+</div>
+
+---
 
 ## 功能
-- 答题判定接管（判我对）
-- 跳过题目（悬浮球 / 按钮选择器）
-- 悬浮控制球与设置页
-- 坐标校准（针对 Compose 答题页）
+
+| 功能 | 说明 |
+| --- | --- |
+| **看得清** | 界面字号缩放、夜间/护眼配色、减弱动画 |
+| **点得准** | 放大点击热区，小按钮也点得到 |
+| **跳过题目** | 悬浮球一键跳过；找不到按钮时用「按钮选择器」点一下屏幕上任意按钮，自动记入跳过词表 |
+| **判我对** | 答题判定接管：选对即记为正确，不再受提交结果影响 |
+| **答题结果改写** | 提交服务器前改写记录字段（可关闭） |
+| **自动听音** | 自动连播单词发音 |
+| **想得久一点** | 答题倒计时放宽 / 不限时 |
+| **悬浮控制球** | 常驻小球，随时开关各项功能 |
 
 ## 环境要求
-- Android 7.0+（minSdk 23）
-- LSPosed / EdXposed 框架
+
+- Android 7.0 及以上（minSdk 23 / targetSdk 34）
+- 框架：**LSPosed**、**Vector**（JingMatrix 分支）或 EdXposed
+- 使用 Zygisk 版框架时需 Magisk / KernelSU 并启用 Zygisk
 
 ## 安装
-1. 从本仓库 Releases 下载 APK 并安装；
-2. 在 LSPosed 中启用「题神·百词斩」，作用域勾选 **com.jiongji.andriod.card**；
-3. 强制停止目标 App（或重启手机），重新打开即可。
+
+1. 到 [Releases](../../releases) 下载 `baicizhan-a11y-1.0.apk` 并安装；
+2. 打开框架管理器（LSPosed / Vector）→ **模块** → 勾选「题神·百词斩」；
+3. 在模块的**作用域**里勾选 百词斩（`com.jiongji.andriod.card`）；
+4. 强制停止目标 App（或重启手机）后重新打开。
+
+> 首次启用建议强停目标 App，让 hook 重新加载。本模块**不写任何日志文件**。
 
 ## 使用
-打开模块自身的设置页调整选项；目标 App 内会出现悬浮控制球，可随时开关接管与跳过。
+
+- 打开「题神·百词斩」设置页，按需开关各项功能；
+- 进入目标 App 后屏幕边缘会出现**悬浮控制球**，可随时开关接管；
+- 「跳过」找不到按钮时：点悬浮球的「找不到按钮？」→ 在列表里点一下要跳过的按钮，模块会自动把它记入跳过词表，之后自动跳过。
+
+## 常见问题
+
+**Q：模块能勾选，但进 App 没反应？**
+A：确认作用域勾了目标 App，再**强制停止**目标 App 后重开；同时在模块设置页确认对应开关已打开。
+
+**Q：会写日志吗？**
+A：不会。当前版本已移除全部日志写盘（仅保留坐标校准数据，供「点得准」使用）。
+
+**Q：会不会被 App 检测 / 封号？**
+A：本模块修改 App 运行行为，存在被风控识别或功能随时失效的风险，请自行评估，建议先用小号验证。
+
+**Q：支持哪些框架？**
+A：LSPosed 与 Vector（同源分支）均已验证，安装方式一致。
+
+## 收录状态
+
+已在 LSPosed 官方模块仓库收录：[modules.lsposed.org/module/io.github.jm350234shenzuo.bcz.a11y](https://modules.lsposed.org/module/io.github.jm350234shenzuo.bcz.a11y/)
+
+## 更新日志
+
+### 1.0
+- 首个公开版本：判分接管、跳过题目 + 按钮选择器、悬浮控制球、无障碍增强。
 
 ## 源码
-源码与构建脚本见 https://github.com/jm350234shenzuo/tishen 的 `baicizhan-a11y/` 目录（本仓库按 LSPosed 模块仓库约定只放说明与发行包，不放源码）。
+
+https://github.com/jm350234shenzuo/tishen —— `baicizhan-a11y/` 目录（本仓库按 LSPosed 模块仓库约定只放说明与发行包，不含源码）。
 
 ## 免责声明
-本模块仅供学习与研究自动化测试使用，请勿用于违反目标 App 服务条款的用途，使用风险自负。
-## LSPosed 樄!W訐
 
-,!W?Uhttps://github.com/Xposed-Modules-Repo/io.github.jm350234shenzuo.bcz.a11y
-LSPosed !Wh(v 5-15 焻>:	
+本模块仅供**个人学习、无障碍辅助与自动化测试研究**使用；请勿用于违反目标 App 服务条款的用途，使用产生的一切后果由使用者自行承担。
