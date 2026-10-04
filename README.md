@@ -29,3 +29,7 @@
 
 ## 免责声明
 本模块仅供学习与研究自动化测试使用，请勿用于违反目标 App 服务条款的用途，使用风险自负。
+## LSPosed 樄!W訐
+
+,!W?Uhttps://github.com/Xposed-Modules-Repo/io.github.jm350234shenzuo.bcz.a11y
+LSPosed !Wh(v 5-15 焻>:	
